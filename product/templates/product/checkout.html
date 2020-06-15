@@ -1,0 +1,52 @@
+{% extends 'product/base.html' %}
+{% load static %}
+{% block body %}
+    <div class="mt-5 container mb-5 text-center">
+        <h3>CHECKOUT PAGE</h3>
+        <hr>
+        <div class="row">
+            <div class="col-md-6">
+                <form action="{% url 'checkout' %}" method="post">
+                    {% csrf_token %}
+                    <input type="name" name="first_name" class="form-control mb-2" placeholder="First Name">
+                    <input type="text" name="last_name" class="form-control mb-2" placeholder="Last Name">
+                    <input type="email" name="email" class="form-control mb-2" placeholder="Email">
+                    <input type="text" name="country" class="form-control mb-2" placeholder="Country">
+                    <input type="text" name="city" class="form-control mb-2" placeholder="City">
+                    <input type="text" name="region" class="form-control mb-2" placeholder="Region">
+                    <input type="text" name="address" class="form-control mb-2" placeholder="Address">
+                    <input type="number" name="phone" class="form-control mb-2" placeholder="Phone number">
+                    <button type="submit" class="btn btn-outline-success col p-2 rounded">Submit</button>
+                </form>
+            </div>
+            <div class="col-md-6">
+                <div class="card">
+                    <a href="{% url 'cart' %}" class="btn rounded m-2 col-md-5 btn-outline-secondary">&#x2190 Back To
+                        Cart</a>
+                    <hr class="mt-0">
+                    <h3 class="m-0">Order Summary</h3>
+                    <hr class="mt-0">
+                    {% for item in items %}
+                        <div class="card p-2 m-2">
+                            <div class="row">
+                                <div style="flex: 2"><img class="img-fluid" style="width: 100px"
+                                                          src="{{ item.product.imageUrl }}" alt=""></div>
+                                <div style="flex: 2">
+                                    <p class="m-0">{{ item.product.name }}</p>
+                                    <p class="mt-0">{{ item.product.brand }}</p>
+                                </div>
+                                <div style="flex: 1"><p>${{ item.product.price }}</p></div>
+                                <div style="flex: 1"><p>x{{ item.quantity }}</p></div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                    <hr>
+                    <div class="row mb-2 text-center">
+                        <div class="col-md-6">Items: {{ order.get_cart_items }}</div>
+                        <div class="col-md-6">Total: ${{ order.get_cart_total|floatformat:2 }}</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

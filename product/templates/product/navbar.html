@@ -1,0 +1,29 @@
+{% load static %}
+<nav class="navbar shadow-sm navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
+    <div class="container">
+        <a class="navbar-brand" href="{% url 'home' %}">Sayfulla | Savdo</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav"
+                aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="oi oi-menu"></span> Menu
+        </button>
+
+        <div class="collapse navbar-collapse" id="ftco-nav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item"><a href="{% url 'home' %}" class="nav-link">Home</a></li>
+                <li class="nav-item"><a href="{% url 'technology' %}" class="nav-link">Technology</a></li>
+                <li class="nav-item"><a href="{% url 'clothes' %}" class="nav-link">Clothes |</a></li>
+                {% if user.is_authenticated %}
+                    <li class="nav-item cta cta-colored">
+                        <a href="{% url 'cart' %}" class="nav-link"><span class="icon-shopping_cart">
+                    </span>[{{ cartItems }}]
+                        </a>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'logout' %}"><span class="icon-sign-out"></span> Log Out</a></li>
+                {% else %}
+                    <li class="nav-item"><a href="{% url 'login' %}" class="nav-link"><span class="icon-sign-in"></span>Login</a></li>
+                    <li class="nav-item"><a href="{% url 'register' %}" class="nav-link"><span class="icon-user"></span> Register</a></li>
+                {% endif %}
+            </ul>
+        </div>
+    </div>
+</nav>

@@ -1,0 +1,87 @@
+{% extends 'product/base.html' %}
+{% load static %}
+{% block body %}
+    <h1 class="m-5 text-center">Cart Page</h1>
+    <hr>
+    <div class="container">
+        <a href="{% url 'home' %}" class="btn rounded btn-outline-success"><span class="icon-shop"></span> Continue
+            Shopping</a>
+        <a href="{% url 'checkout' %}" class="btn float-right rounded btn-outline-success"><span
+                class="icon-money"></span> Checkout</a>
+        <div class="clr"></div>
+    </div>
+    <hr>
+    <section class="mt-2 ftco-cart">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                        <table class="table">
+                            <thead class="thead-primary">
+                            <tr class="text-center">
+                                <th>&nbsp;</th>
+                                <th>Items: {{ order.get_cart_items }}</th>
+                                <th>&nbsp;</th>
+                                <th></th>
+                                <th>Total: {{ order.get_cart_total|floatformat:2 }}</th>
+                                <th></th>
+                            </tr>
+                            </thead>
+                        </table>
+                </div>
+
+                <div class="col-md-12 ftco-animate">
+                    <div class="cart-list">
+                        <table class="table">
+                            <thead class="thead-primary">
+                            <tr class="text-center">
+                                <th>&nbsp;</th>
+                                <th>Product List:</th>
+                                <th>&nbsp;</th>
+                                <th>Price:</th>
+                                <th>Quantity:</th>
+                                <th>Total:</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            {% for item in items %}
+                                <tr class="text-center">
+                                    <td class="product-remove"><a data-product="{{ item.product.id }}" data-action="set_null" class="update-cart" href=""><span data-product="{{ item.product.id }}" data-action="set_null"
+                                            class="ion-ios-close"></span></a></td>
+
+                                    <td class="image-prod img-thumbnail">
+                                        <div class="img"
+                                             style="background-image: url({{ item.product.imageUrl }});">
+                                        </div>
+                                    </td>
+
+                                    <td class="product-name">
+                                        <h3>{{ item.product.name }}</h3>
+                                        <p>{{ item.product.brand }}</p>
+                                    </td>
+
+                                    <td class="price">${{ item.product.price|floatformat:2 }}</td>
+
+                                    <td class="quantity">
+                                        <button type="button" data-product="{{ item.product.id }}" data-action="remove"
+                                                class="quantity-left-minus update-cart rounded btn border border-success btn-success">
+                                            <i class="ion-ios-remove"></i>
+                                        </button>
+                                        <span class="mr-3 ml-3"> {{ item.quantity }} </span>
+
+                                        <button type="button" data-product="{{ item.product.id }}" data-action="add"
+                                                class="quantity-right-plus update-cart rounded btn border border-success btn-success">
+                                            <i class="ion-ios-add"></i>
+                                        </button>
+                                    </td>
+
+                                    <td class="total">${{ item.get_total|floatformat:2 }}</td>
+                                </tr><!-- END TR-->
+                            {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}

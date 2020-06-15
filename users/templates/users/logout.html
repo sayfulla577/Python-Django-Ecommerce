@@ -1,0 +1,10 @@
+{% extends 'product/base.html' %}
+
+{% block body %}
+    <div class="mt-5 mb-5 container">
+        <h2>You have been logged out</h2>
+        <div class="text-muted">
+            <a class="btn btn-outline-success rounded" href="{% url 'login' %}">Login Again</a>
+        </div>
+    </div>
+{% endblock %}

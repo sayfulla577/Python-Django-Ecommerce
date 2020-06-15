@@ -1,0 +1,39 @@
+{% extends 'product/base.html' %}
+{% load static %}
+{% block body %}
+    <div class="m-4">
+        <section class="ftco-section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6 mb-5 ftco-animate">
+                        <a href="{{ product.imageUrl }}" class="image-popup"><img
+                                src="{{ product.imageUrl }}"
+                                class="img-fluid w-100"
+                                alt="image"></a>
+                    </div>
+                    <div class="col-lg-6 product-details pl-md-5 ftco-animate">
+                        <h3>{{ product.name }}</h3>
+                        <hr>
+                        <p class="price"><span>${{ product.price|floatformat:2 }}</span></p>
+                        <p>About: <span class="text-dark">{{ product.about }}</span></p>
+                        <p>Garanty: <span class="text-dark">{{ product.garanty }}</span></p>
+                        <p>Brand: <span class="text-dark">{{ product.brand }}</span></p>
+                        <div class="row mt-4">
+                            <div class="col-md-6">
+                                <div class="form-group d-flex">
+                                    <div class="select-wrap">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="w-100"></div>
+                        </div>
+                        {% if user.is_authenticated %}
+                            <p><a href="" data-product="{{ product.id }}" data-action="add"
+                                 class="btn update-cart btn-black py-3 px-5">Add to Cart</a></p>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+{% endblock %}
