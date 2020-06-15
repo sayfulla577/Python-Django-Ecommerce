@@ -137,7 +137,7 @@ def checkout(request):
 
         if first_name and last_name and email and country and city and region and address and phone:
             send_mail(f"{first_name} {last_name}: {datetime.now()}",
-                      f'Request Customer:\nUsername: {request.user.username}\nFull Name: {request.user.first_name}\nEmail: {request.user.email}\n\nForm Customer:\nFirst name:  {first_name}\nLast Name: {last_name}\nEmail: {email}\nCountry: {country}\nCity: {city}\nRegion: {region}\nAddress: {address}\nPhone Number: {phone}\n\nProducts: \n-----------------\n{customerProducts}\nItems: {order.get_cart_items}\nTotal: ${order.get_cart_total}',
+                      f'Request Customer:\nUsername: {request.user.username}\nFull Name: {request.user.first_name} {request.user.last_name}\nEmail: {request.user.email}\n\nForm Customer:\nFirst name:  {first_name}\nLast Name: {last_name}\nEmail: {email}\nCountry: {country}\nCity: {city}\nRegion: {region}\nAddress: {address}\nPhone Number: {phone}\n\nProducts: \n-----------------\n{customerProducts}\nItems: {order.get_cart_items}\nTotal: ${order.get_cart_total}',
                       settings.EMAIL_HOST_USER,
                       ['Email Name'],
                       fail_silently=False)
