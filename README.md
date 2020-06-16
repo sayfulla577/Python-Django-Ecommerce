@@ -11,4 +11,4 @@ Python mini Django Ecommerce Website
 6. Run the Application: `python manage.py runserver` and open your browser write `http://127.0.0.1:8000/`
 7. Login admin dashboard: `http://127.0.0.1:8000/admin/login/?next=/admin/` 
 8. Add your new Products: `http://127.0.0.1:8000/admin/product/product/add/`
-9. Go Back Home and work all) - `http://127.0.0.1:8000/`
+9. Go Back Home and work all: `http://127.0.0.1:8000/`
