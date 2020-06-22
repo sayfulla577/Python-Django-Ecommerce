@@ -19,7 +19,7 @@ def product(request):
         order = {"get_cart_total": 0, "get_cart_items": 0}
         cartItems = order['get_cart_items']
 
-    products = Product.objects.filter(completed=False).order_by('-id')
+    products = Product.objects.all().order_by('-id')
     context = {
         "title": "Home",
         "products": products,
