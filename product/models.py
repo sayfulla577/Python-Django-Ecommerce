@@ -28,6 +28,7 @@ class Product(models.Model):
     name = models.CharField(max_length=200, null=True)
     price = models.FloatField()
     about = models.CharField(max_length=200, null=True)
+    completed = models.BooleanField(default=False, null=True, blank=True)
     garanty = models.CharField(max_length=200, null=True)
     brand = models.CharField(max_length=200, null=True)
     image = models.ImageField(null=True, blank=True)
