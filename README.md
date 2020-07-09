@@ -3,7 +3,7 @@
 Python mini Django Ecommerce Website
 
 ### Setup
-1. Download this Repository: `git clone https://github.com/sayfulla577/Python-Django-Ecommerce.git`
+1. Download this Repository: `git clone https://github.com/MirkhalikovSayfulla/Python-Django-Ecommerce.git`
 2. Move to the base directory: `cd Python-Django-Ecommerce`
 3. Write in terminal: `python manage.py migrate` , `python manage.py makemigrations` and `python manage.py migrate`
 4. Create new User: `python manage.py createsuperuser`
