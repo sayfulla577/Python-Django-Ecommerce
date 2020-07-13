@@ -30,7 +30,7 @@ class Product(models.Model):
     about = models.CharField(max_length=200, null=True)
     garanty = models.CharField(max_length=200, null=True)
     brand = models.CharField(max_length=200, null=True)
-    image = models.ImageField(null=True, blank=True)
+    image = models.ImageField(null=True, blank=True, upload_to='productImage')
     category = models.CharField(max_length=200, choices=CATEGORY_PRODUCT)
 
     def __str__(self):
@@ -45,6 +45,23 @@ class Product(models.Model):
 
         return url
 
+
+class ProductView(models.Model):
+    product = models.ForeignKey(Product, on_delete=models.CASCADE)
+    name = models.CharField(max_length=150)
+    image = models.ImageField(null=True, blank=True, upload_to='productImage')
+
+    def __str__(self):
+        return self.name
+
+    @property
+    def imageUrl(self):
+        try:
+            url = self.image.url
+        except:
+            url = ""
+
+        return url
 
 class Order(models.Model):
     customer = models.ForeignKey(Customer, on_delete=models.SET_NULL, blank=True, null=True)

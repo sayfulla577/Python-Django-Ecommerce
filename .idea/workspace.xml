@@ -1,7 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c6c322e3-2862-4982-a281-3445eafd0833" name="Default Changelist" comment="" />
+    <list default="true" id="c6c322e3-2862-4982-a281-3445eafd0833" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/product/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/product/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/product/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/product/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/product/templates/product/product_detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/product/templates/product/product_detail.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/product/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/product/views.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -20,6 +27,9 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="ProjectId" id="1coPQjpQHXj2IltheSjmuURmlc8" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -29,6 +39,7 @@
   <component name="PropertiesComponent">
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../../The django/savdo" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
@@ -86,6 +97,7 @@
       <workItem from="1591645534370" duration="7014000" />
       <workItem from="1591833345371" duration="622000" />
       <workItem from="1591906281303" duration="1962000" />
+      <workItem from="1594631115091" duration="719000" />
     </task>
     <servers />
   </component>
@@ -121,10 +133,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="184" y="6" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1591192067448" />
-    <state x="379" y="188" key="com.intellij.ide.util.TipDialog" timestamp="1591906284128">
+    <state x="379" y="188" key="com.intellij.ide.util.TipDialog" timestamp="1594631120734">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="379" y="188" key="com.intellij.ide.util.TipDialog/0.0.1366.728@0.0.1366.728" timestamp="1591906284128" />
+    <state x="379" y="188" key="com.intellij.ide.util.TipDialog/0.0.1366.728@0.0.1366.728" timestamp="1594631120734" />
     <state x="346" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1591478288591">
       <screen x="0" y="0" width="1366" height="728" />
     </state>

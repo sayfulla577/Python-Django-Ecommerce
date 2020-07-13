@@ -143,7 +143,7 @@ def checkout(request):
                       fail_silently=False)
             return redirect('home')
         else:
-            messages.warning(request,"Fill Out The Form")
+            messages.warning(request, "Fill Out The Form")
 
     context = {
         "title": "Checkout",
